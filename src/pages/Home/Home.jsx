@@ -1,25 +1,29 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import * as API from 'services/api';
-import { markupTrendingToday } from 'templates/markupTrendingToday';
+import { TrendList } from 'components/TrendList';
 
 export const Home = () => {
-  const [trendingToday, setTrandingToday] = useState([]);
+  const [value, setValue] = useState([]);
   useEffect(() => {
     async function fetchAssets() {
       try {
         const { results } = await API.getMovie();
-        results.map(item => console.log(item.title));
-        console.log(markupTrendingToday(results));
-        // return (refs.trend.innerHTML = await markupGallery(results));
-        // console.log(results[0].original_title);
-        // setTrandingToday(results);
-        // console.log('trendingToday', trendingToday);
+        setValue(results);
       } catch (error) {
         console.log(error);
       }
     }
     fetchAssets();
-  }, [trendingToday]);
+  }, []);
 
-  return <div>Trending today</div>;
+  function onSelect() {
+    console.log('onSelect Pressed');
+  }
+
+  return (
+    <>
+      <h1>Trending today</h1>
+      <TrendList data={value} onSelect={onSelect} />
+    </>
+  );
 };
