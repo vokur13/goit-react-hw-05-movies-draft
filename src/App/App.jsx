@@ -1,20 +1,17 @@
 // import { Route, Routes } from 'react-router-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 // import { Section } from '../components/Section';
 // import { Notification } from '../components/Notification';
-import { Layout } from '../components/Layout/Layout';
+import { Layout } from 'components/Layout';
 
-function App() {
+export const App = () => {
   return (
     <>
-      {/* <Layout /> */}
-      <Router>
-        <Routes>
-          <Route path="/" element={<Layout />} />
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path="/" element={<Layout />} />
+      </Routes>
     </>
   );
-}
+};
 
-export default App;
+// export default App;
