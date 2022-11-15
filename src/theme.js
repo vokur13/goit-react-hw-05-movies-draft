@@ -6,10 +6,11 @@ export const theme = {
     background: '#fff',
     primary: '#07c',
     secondary: '#05a',
-    accent: '#ff5722',
-    muted: '#f6f6f6',
+    accent: '#609',
+    muted: 'grey',
+    //     muted: '#f6f6f6',
   },
-  space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: 'system-ui, sans-serif',
     heading: 'system-ui, sans-serif',
@@ -33,10 +34,17 @@ export const theme = {
   borders: {
     none: 'none',
     normal: '1px solid',
+    borderWidth: {
+      thick: 'thick',
+      '1em': '1em',
+    },
   },
   radii: {
     none: '0',
     normal: '4px',
     round: '50%',
+  },
+  shadows: {
+    header: '0px 10px 8px 0px rgba(34, 60, 80, 0.2)',
   },
 };
