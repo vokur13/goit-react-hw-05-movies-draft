@@ -1,17 +1,17 @@
 // import PropTypes from 'prop-types';
-import { StyledNavItem } from '.NavItem.styled';
+// import { StyledNavItem } from '.NavItem.styled';
 
-export const NavItem = (
-  {
-    //   icon: Icon = null,
-    //   type = 'button',
-    //   disabled = false,
-    //   onClick,
-    //   children,
-  }
-) => {
-  return <StyledNavItem />;
-};
+// export const NavItem = (
+//   {
+//     //   icon: Icon = null,
+//     //   type = 'button',
+//     //   disabled = false,
+//     //   onClick,
+//     //   children,
+//   }
+// ) => {
+//   return <StyledNavItem />;
+// };
 
 // NavItem.propTypes = {
 //   icon: PropTypes.element,

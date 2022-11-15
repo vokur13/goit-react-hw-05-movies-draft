@@ -16,8 +16,8 @@ export const Home = () => {
     fetchAssets();
   }, []);
 
-  function onSelect() {
-    console.log('onSelect Pressed');
+  function onSelect(data) {
+    console.log(data);
   }
 
   return (
