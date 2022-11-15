@@ -8,14 +8,17 @@ import { Layout } from '../Layout';
 export const App = () => {
   
   return (
-    <>
+    <div>
       <Routes>
         <Route path='/' element={<Layout/>}></Route>
+      </Routes>
+      {/* <Routes> */}
+        {/* <Route path='/' element={<Layout/>}></Route> */}
         {/* <Route path="/" element={<Home />} /> */}
         {/* <Route path="/movies" element={<Movies />} /> */}
         {/* <Route path="//movies/:movieId" element={<MovieDetails />} /> */}
         {/* <Route path="*" element={<NotFound />} /> */}
-      </Routes>
-    </>
+      {/* </Routes> */}
+    </div>
   );
 };
