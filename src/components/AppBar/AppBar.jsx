@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Box } from '../Box';
 import { NavLink } from 'react-router-dom';
+// import { NavItem } from 'components/NavItem';
 
 const navItems = [
   { href: 'home', text: 'Home' },
@@ -31,15 +32,15 @@ export const AppBar = () => {
   return (
     <Box
       as="header"
-      position="fixed"
-      zIndex="99"
+      // position="fixed"
+      // zIndex="99"
       width={1}
       display="flex"
       alignItems="center"
       justifyContent="space-between"
       bg="#3caea3"
       px={4}
-      py={2}
+      // py={2}
       boxShadow="0px 4px 8px 0px rgba(34, 60, 80, 0.42)"
     >
       <Box as="nav" display="flex" flex={1}>
