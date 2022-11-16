@@ -4,6 +4,7 @@ import { TrendList } from 'components/TrendList';
 
 export const Home = () => {
   const [value, setValue] = useState([]);
+  const [movieId, setMovieID] = useState('');
   useEffect(() => {
     async function fetchAssets() {
       try {
@@ -17,7 +18,8 @@ export const Home = () => {
   }, []);
 
   function onSelect(data) {
-    console.log(data);
+    setMovieID(data);
+    console.log(movieId);
   }
 
   return (
