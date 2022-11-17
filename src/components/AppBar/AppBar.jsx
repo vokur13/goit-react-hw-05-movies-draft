@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 // import { NavItem } from 'components/NavItem';
 
 const navItems = [
-  { href: 'home', text: 'Home' },
+  { href: '/', text: 'Home' },
   { href: 'movies', text: 'Movies' },
 ];
 
@@ -12,15 +12,13 @@ const NavItem = styled(NavLink)`
   display: flex;
   align-items: center;
   // gap: ${p => p.theme.space[3]}px;
-  margin-right:not(:last-child): ${p => p.theme.space[4]}px;
   padding: ${p => p.theme.space[0]}px;
   border-radius: 4px;
   text-decoration: none;
   color: ${p => p.theme.colors.text};
-  &:not(:last-child){
+  &:not(:last-child) {
     margin-right: ${p => p.theme.space[4]}px;
-  
-}
+  }
 
   &.active {
     // background-color: ${p => p.theme.colors.primary};
