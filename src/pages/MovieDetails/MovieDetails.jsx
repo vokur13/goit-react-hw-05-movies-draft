@@ -1,11 +1,10 @@
-// import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 import { NavLink, Outlet } from 'react-router-dom';
 import { Box } from 'components/Box';
 import { useEffect, useState } from 'react';
 import * as API from 'services/api';
 import { MovieOverview } from 'components/MovieOverview';
-import { NavItem, List } from './MovieDetails.styled';
+import { NavItem } from './MovieDetails.styled';
 
 const navItems = [
   { href: 'cast', text: 'Cast' },
@@ -44,5 +43,3 @@ export const MovieDetails = () => {
     </Box>
   );
 };
-
-//  as="ul" display="flex" flexDirection="column"

@@ -34,6 +34,11 @@ export const getMovieReview = async movieID => {
   return data;
 };
 
+export const getMovieKeyWord = async keyWord => {
+  const { data } = await axios.get(`/search/${keyWord}?${searchParams}&page=1`);
+  return data;
+};
+
 // const api_movie =
 //   'https://api.themoviedb.org/3/trending/movie/day?api_key=e1d2d59faab8416a91a95646b10aa32e';
 
@@ -42,3 +47,6 @@ export const getMovieReview = async movieID => {
 
 // const api_review =
 //   'https://api.themoviedb.org/3/movie/{movie_id}/reviews?api_key=<<api_key>>&language=en-US&page=1';
+
+// const api_key_word =
+//   'https://api.themoviedb.org/3/search/keyword?api_key=<<api_key>>&page=1';

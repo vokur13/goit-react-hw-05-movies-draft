@@ -24,10 +24,3 @@ export const List = styled.ul`
   padding-top: ${p => p.theme.space[2]}px;
   padding-bottom: ${p => p.theme.space[2]}px;
 `;
-
-// export const Item = styled.li`
-//   list-style: square;
-//   &:not(:last-child) {
-//     margin-bottom: ${p => p.theme.space[3]}px;
-//   }
-// `;
