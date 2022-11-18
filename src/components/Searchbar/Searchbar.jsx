@@ -34,19 +34,21 @@ export function Searchbar({ onFormSubmit }) {
 
   return (
     <>
-      <SearchForm onSubmit={handleSubmit(onSubmit)}>
-        <Input
-          placeholder="Search your movie"
-          autoComplete="off"
-          autoFocus
-          defaultValue=""
-          {...register('query')}
-        />
-        <SearchFormButton type="submit">
-          <ImSearch style={{ marginRight: 0 }} />
-        </SearchFormButton>
-        <p>{errors.query?.message}</p>
-      </SearchForm>
+      <Box my={3}>
+        <SearchForm onSubmit={handleSubmit(onSubmit)}>
+          <Input
+            placeholder="Search your movie"
+            autoComplete="off"
+            autoFocus
+            defaultValue=""
+            {...register('query')}
+          />
+          <SearchFormButton type="submit">
+            <ImSearch style={{ marginRight: 0 }} />
+          </SearchFormButton>
+          <p>{errors.query?.message}</p>
+        </SearchForm>
+      </Box>
     </>
     // <Box
     //   top={0}
