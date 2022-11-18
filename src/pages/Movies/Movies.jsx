@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import { Searchbar } from 'components/Searchbar';
 import * as API from 'services/api';
 import { List, Item, NavItem } from './Movies.styled';
 
 export const Movies = () => {
-  const { movieTitle } = useParams();
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get('query');
   const [keyWord, setKeyWord] = useState('');
   const [movies, setMovies] = useState([]);
+
+  console.log('search param query', query);
 
   function handleFormSubmit({ query }) {
     if (!query.trim().toLowerCase()) {
