@@ -35,7 +35,9 @@ export const getMovieReview = async movieID => {
 };
 
 export const getMovieKeyWord = async keyWord => {
-  const { data } = await axios.get(`/search/${keyWord}?${searchParams}&page=1`);
+  const { data } = await axios.get(
+    `/search/movie?${searchParams}&language=en-US&page=1&include_adult=false&query=${keyWord}`
+  );
   return data;
 };
 
@@ -50,3 +52,6 @@ export const getMovieKeyWord = async keyWord => {
 
 // const api_key_word =
 //   'https://api.themoviedb.org/3/search/keyword?api_key=<<api_key>>&page=1';
+
+// const api_query =
+//   'https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&page=1&include_adult=false&query=batman';
