@@ -55,3 +55,6 @@ export const getMovieKeyWord = async keyWord => {
 
 // const api_query =
 //   'https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&page=1&include_adult=false&query=batman';
+
+// const api_image = 'http://image.tmdb.org/t/p/w780${item.poster_path}';
+//   https://api.themoviedb.org/3/movie/{movie_id}/images?api_key=e1d2d59faab8416a91a95646b10aa32e&language=en-US
