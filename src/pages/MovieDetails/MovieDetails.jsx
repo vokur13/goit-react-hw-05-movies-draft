@@ -31,7 +31,7 @@ export const MovieDetails = () => {
   if (!movie) {
     return;
   }
-  console.log(movie.belongs_to_collection.poster_path);
+  // console.log(movie.belongs_to_collection.poster_path);
 
   const backLink = location.state?.from ?? '/';
 

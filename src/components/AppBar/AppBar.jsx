@@ -2,7 +2,7 @@ import { Box } from '../Box';
 import { NavItem } from './AppBar.styled';
 
 const navItems = [
-  { href: 'home', text: 'Home' },
+  { href: '/', text: 'Home' },
   { href: 'movies', text: 'Movies' },
 ];
 
