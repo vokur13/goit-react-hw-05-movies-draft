@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { Box } from 'components/Box';
 import { SearchForm, Input, SearchFormButton } from './Searchbar.styled';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -15,7 +14,7 @@ export function Searchbar({ onFormSubmit }) {
   const {
     register,
     handleSubmit,
-    watch,
+    // watch,
     reset,
     formState: { errors, isSubmitSuccessful },
   } = useForm({ resolver: yupResolver(schema) });
@@ -24,7 +23,7 @@ export function Searchbar({ onFormSubmit }) {
     onFormSubmit(data);
   };
 
-  console.log(watch('query'));
+  // console.log(watch('query'));
 
   useEffect(() => {
     if (isSubmitSuccessful) {
@@ -34,52 +33,20 @@ export function Searchbar({ onFormSubmit }) {
 
   return (
     <>
-      <Box my={3}>
-        <SearchForm onSubmit={handleSubmit(onSubmit)}>
-          <Input
-            placeholder="Search your movie"
-            autoComplete="off"
-            autoFocus
-            defaultValue=""
-            {...register('query')}
-          />
-          <SearchFormButton type="submit">
-            <ImSearch style={{ marginRight: 0 }} />
-          </SearchFormButton>
-          <p>{errors.query?.message}</p>
-        </SearchForm>
-      </Box>
+      <SearchForm onSubmit={handleSubmit(onSubmit)}>
+        <Input
+          placeholder="Search your movie"
+          autoComplete="off"
+          autoFocus
+          defaultValue=""
+          {...register('query')}
+        />
+        <SearchFormButton type="submit">
+          <ImSearch style={{ marginRight: 0 }} />
+        </SearchFormButton>
+        <p>{errors.query?.message}</p>
+      </SearchForm>
     </>
-    // <Box
-    //   top={0}
-    //   left={0}
-    //   position="sticky"
-    //   zIndex="appBar"
-    //   display="flex"
-    //   justifyContent="center"
-    //   alignItems="center"
-    //   minHeight={7}
-    //   px={5}
-    //   py={3}
-    //   color="white"
-    //   bg="accent"
-    //   boxShadow="appBar"
-    //   as="header"
-    // >
-    //   <SearchForm onSubmit={handleSubmit(onSubmit)}>
-    //     <SearchFormButton type="submit">
-    //       <ImSearch style={{ marginRight: 0 }} />
-    //     </SearchFormButton>
-    //     <Input
-    //       placeholder="Search images and photos"
-    //       autoComplete="off"
-    //       autoFocus
-    //       defaultValue=""
-    //       {...register('query')}
-    //     />
-    //     <p>{errors.query?.message}</p>
-    //   </SearchForm>
-    // </Box>
   );
 }
 

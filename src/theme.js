@@ -33,7 +33,7 @@ export const theme = {
   },
   borders: {
     none: 'none',
-    normal: '1px solid',
+    normal: '1px solid lightgrey',
     borderWidth: {
       thick: 'thick',
       '1em': '1em',

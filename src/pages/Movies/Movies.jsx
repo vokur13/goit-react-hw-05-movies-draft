@@ -1,10 +1,5 @@
 import { useEffect, useState } from 'react';
-import {
-  Outlet,
-  NavLink,
-  useSearchParams,
-  useLocation,
-} from 'react-router-dom';
+import { NavLink, useSearchParams, useLocation } from 'react-router-dom';
 import { Searchbar } from 'components/Searchbar';
 import * as API from 'services/api';
 import { List, Item } from './Movies.styled';
@@ -15,16 +10,10 @@ export const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const keyWord = searchParams.get('query') ?? '';
 
-  // const query = searchParams.get('query');
-  // const [keyWord, setKeyWord] = useState('');
-
-  // console.log('search param query', query);
-
   function handleFormSubmit({ query }) {
     if (!query.trim().toLowerCase()) {
       return;
     }
-    // setKeyWord(query);
     setSearchParams(query !== '' ? { query: query } : {});
   }
 
@@ -57,10 +46,6 @@ export const Movies = () => {
           ))}
         </List>
       )}
-
-      {/* <Outlet /> */}
     </>
   );
 };
-
-// toast.warn('Please let us know your query item');

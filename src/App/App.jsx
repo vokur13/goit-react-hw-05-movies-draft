@@ -1,13 +1,7 @@
 import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-// import { Section } from '../components/Section';
-// import { Notification } from '../components/Notification';
 import { Layout } from 'components/Layout';
 import { Home } from 'pages/Home';
-// import { Movies } from 'pages/Movies';
-// import { MovieDetails } from 'pages/MovieDetails';
-// import { Cast } from 'pages/Cast';
-// import { Reviews } from 'pages/Reviews';
 import { NotFound } from 'pages/NotFound';
 
 const Movies = lazy(() =>

@@ -32,7 +32,6 @@ export const MovieDetails = () => {
 
   return (
     <Box>
-      {/* <NavLink to={`/`}>Go back</NavLink> */}
       <NavLink to={backLink}>Go back</NavLink>
       {movie ? <MovieOverview movie={movie} /> : null}
       <Box mb={3}>Additional information</Box>
