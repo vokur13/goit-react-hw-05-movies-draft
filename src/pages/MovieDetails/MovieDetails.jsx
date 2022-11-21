@@ -14,7 +14,6 @@ const navItems = [
 export const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState('');
-  // const [poster, setPoster] = useState('');
   const location = useLocation();
 
   useEffect(() => {
@@ -34,25 +33,12 @@ export const MovieDetails = () => {
   }
   console.log(movie.belongs_to_collection.poster_path);
 
-  // useEffect(() => {
-  //   async function fetchMoviePoster(movieId) {
-  //     try {
-  //       const dataPoster = await API.getMoviePoster(movieId);
-  //       console.log('dataPoster', dataPoster);
-  //       setPoster(dataPoster);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-  //   fetchMoviePoster(movieId);
-  // }, [movieId]);
-
   const backLink = location.state?.from ?? '/';
 
   return (
     <Box>
       <NavLink to={backLink}>Go back</NavLink>
-      {movie ? <MovieOverview movie={movie} /> : null}
+      {movie && <MovieOverview movie={movie} />}
       <Box mb={3}>Additional information</Box>
       <Box as="ul" display="flex" flexDirection="column">
         {navItems.map(({ href, text }) => (

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Box } from 'components/Box';
 import { useLocation } from 'react-router-dom';
 import { TrendListItem, NavItem } from './TrendList.styled';
@@ -17,4 +18,8 @@ export const TrendList = ({ data }) => {
       </ul>
     </Box>
   );
+};
+
+TrendList.propTypes = {
+  data: PropTypes.array,
 };

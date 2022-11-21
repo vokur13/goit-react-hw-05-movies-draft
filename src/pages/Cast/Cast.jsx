@@ -21,8 +21,7 @@ export const Cast = () => {
 
   return (
     <>
-      {/* <div>Now showing movie with id - {movieId}</div> */}
-      {credits ? (
+      {credits && (
         <List>
           {credits.map(({ credit_id, name, character }) => (
             <Item key={credit_id}>
@@ -36,7 +35,7 @@ export const Cast = () => {
             </Item>
           ))}
         </List>
-      ) : null}
+      )}
     </>
   );
 };

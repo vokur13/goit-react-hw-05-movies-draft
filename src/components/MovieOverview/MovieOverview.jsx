@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 import { Box } from 'components/Box';
 import { GenreList, GenreItem } from './MovieOverview.styled';
@@ -11,7 +12,7 @@ export const MovieOverview = ({ movie }) => {
         <Box>
           <img
             // src={'http://image.tmdb.org/t/p/w780${movie.poster_path'}
-            src="http://image.tmdb.org/t/p/w780{movie.poster_path}"
+            // src="http://image.tmdb.org/t/p/w780{movie.poster_path}"
             // src="https://image.tmdb.org/t/p/original/"
             alt={movie.title}
           ></img>
@@ -33,4 +34,14 @@ export const MovieOverview = ({ movie }) => {
       </Box>
     </>
   );
+};
+
+MovieOverview.propTypes = {
+  movie: PropTypes.shape({
+    release_date: PropTypes.string,
+    title: PropTypes.string,
+    vote_average: PropTypes.number,
+    overview: PropTypes.string,
+    genres: PropTypes.array,
+  }),
 };
