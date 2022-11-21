@@ -41,6 +41,13 @@ export const getMovieKeyWord = async keyWord => {
   return data;
 };
 
+// export const getMovieKeyWord = async keyWord => {
+//   const { data } = await axios.get(
+//     `/search/movie?${searchParams}&language=en-US&page=1&include_adult=false${keyWord}`
+//   );
+//   return data;
+// };
+
 // const api_movie =
 //   'https://api.themoviedb.org/3/trending/movie/day?api_key=e1d2d59faab8416a91a95646b10aa32e';
 

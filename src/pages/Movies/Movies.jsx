@@ -1,23 +1,31 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { Outlet } from 'react-router-dom';
+import {
+  Outlet,
+  NavLink,
+  useSearchParams,
+  useLocation,
+} from 'react-router-dom';
 import { Searchbar } from 'components/Searchbar';
 import * as API from 'services/api';
-import { List, Item, NavItem } from './Movies.styled';
+import { List, Item } from './Movies.styled';
 
 export const Movies = () => {
-  const [searchParams] = useSearchParams();
-  const query = searchParams.get('query');
-  const [keyWord, setKeyWord] = useState('');
+  const location = useLocation();
   const [movies, setMovies] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const keyWord = searchParams.get('query') ?? '';
 
-  console.log('search param query', query);
+  // const query = searchParams.get('query');
+  // const [keyWord, setKeyWord] = useState('');
+
+  // console.log('search param query', query);
 
   function handleFormSubmit({ query }) {
     if (!query.trim().toLowerCase()) {
       return;
     }
-    setKeyWord(query);
+    // setKeyWord(query);
+    setSearchParams(query !== '' ? { query: query } : {});
   }
 
   useEffect(() => {
@@ -35,22 +43,22 @@ export const Movies = () => {
     fetchAssetsByKeyWord(keyWord);
   }, [keyWord]);
 
-  console.log('movies', movies);
-
   return (
     <>
       <Searchbar onFormSubmit={handleFormSubmit} />
-      {movies.length > 0 ? (
+      {movies.length > 0 && (
         <List>
           {movies.map(({ id, title }) => (
             <Item key={id}>
-              <NavItem to={`/${id}`}>{title}</NavItem>
+              <NavLink to={`${id}`} state={{ from: location }}>
+                {title}
+              </NavLink>
             </Item>
           ))}
         </List>
-      ) : null}
+      )}
 
-      <Outlet />
+      {/* <Outlet /> */}
     </>
   );
 };

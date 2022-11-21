@@ -18,3 +18,4 @@ root.render(
 );
 
 // basename = '/home';
+// /goit-react-hw-05-movies-draft

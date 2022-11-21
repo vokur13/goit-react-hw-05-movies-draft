@@ -24,15 +24,15 @@ export const Cast = () => {
       {/* <div>Now showing movie with id - {movieId}</div> */}
       {credits ? (
         <List>
-          {credits.map(item => (
-            <Item key={item.credit_id}>
+          {credits.map(({ credit_id, name, character }) => (
+            <Item key={credit_id}>
               <img
                 // src={'http://image.tmdb.org/t/p/w780${movie.poster_path'}
                 src="https://image.tmdb.org/t/p/original/{item.profile_path}"
-                alt={item.name}
+                alt={name}
               ></img>
-              <p>{item.name}</p>
-              <p>Character: {item.character}</p>
+              <p>{name}</p>
+              <p>Character: {character}</p>
             </Item>
           ))}
         </List>

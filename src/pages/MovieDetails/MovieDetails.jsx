@@ -1,7 +1,7 @@
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { NavLink, Outlet } from 'react-router-dom';
 import { Box } from 'components/Box';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import * as API from 'services/api';
 import { MovieOverview } from 'components/MovieOverview';
 import { NavItem } from './MovieDetails.styled';
@@ -14,6 +14,7 @@ const navItems = [
 export const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState('');
+  const location = useLocation();
 
   useEffect(() => {
     async function fetchAssetsByID(movieId) {
@@ -27,19 +28,24 @@ export const MovieDetails = () => {
     fetchAssetsByID(movieId);
   }, [movieId]);
 
+  const backLink = location.state?.from ?? '/';
+
   return (
     <Box>
-      <NavLink to={`/`}>Go back</NavLink>
+      {/* <NavLink to={`/`}>Go back</NavLink> */}
+      <NavLink to={backLink}>Go back</NavLink>
       {movie ? <MovieOverview movie={movie} /> : null}
       <Box mb={3}>Additional information</Box>
       <Box as="ul" display="flex" flexDirection="column">
         {navItems.map(({ href, text }) => (
-          <NavItem key={href} to={href}>
+          <NavItem key={href} to={href} state={{ from: location }}>
             {text}
           </NavItem>
         ))}
       </Box>
-      <Outlet />
+      <Suspense fallback={<h1>Movie Details to be appeared</h1>}>
+        <Outlet />
+      </Suspense>
     </Box>
   );
 };
