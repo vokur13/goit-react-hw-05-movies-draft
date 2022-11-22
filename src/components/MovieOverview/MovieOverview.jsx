@@ -6,14 +6,14 @@ import { GenreList, GenreItem } from './MovieOverview.styled';
 export const MovieOverview = ({ movie }) => {
   const releaseDate = format(new Date(movie.release_date), 'yyyy');
 
+  const basePosterPath = 'http://image.tmdb.org/t/p/original';
+
   return (
     <>
       <Box display="grid" gridTemplateColumns="1fr 5fr">
-        <Box>
+        <Box m={1}>
           <img
-            // src={'http://image.tmdb.org/t/p/w780${movie.poster_path'}
-            // src="http://image.tmdb.org/t/p/w780{movie.poster_path}"
-            // src="https://image.tmdb.org/t/p/original/"
+            src={`${basePosterPath}${movie.poster_path}`}
             alt={movie.title}
           ></img>
         </Box>

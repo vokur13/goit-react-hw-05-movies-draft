@@ -10,6 +10,6 @@ export const List = styled.ul`
 export const Item = styled.li`
   list-style: square;
   &:not(:last-child) {
-    margin-bottom: ${p => p.theme.space[3]}px;
+    margin-bottom: ${p => p.theme.space[4]}px;
   }
 `;
