@@ -29,13 +29,8 @@ export const Cast = () => {
           {credits.map(({ credit_id, name, character, profile_path }) => (
             <Item key={credit_id}>
               <Box width="10%">
-                <img
-                  src={`${basePosterPath}${profile_path}`}
-                  // src="https://image.tmdb.org/t/p/original/{item.profile_path}"
-                  alt={name}
-                ></img>
+                <img src={`${basePosterPath}${profile_path}`} alt={name}></img>
               </Box>
-
               <p>{name}</p>
               <p>Character: {character}</p>
             </Item>
